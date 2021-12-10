@@ -17,8 +17,11 @@ export const Button = ({
       color={color}
       variant={variant}
       disabled={disabled}
+      startIcon={startIcon}
+      endIcon={endIcon}
+      disableShadow={disableShadow}
     >
-      {children}
+      {startIcon} {children} {endIcon}
     </ButtonStyled>
   )
 }

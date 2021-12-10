@@ -70,10 +70,13 @@ export const ButtonStyled = styled.button`
   cursor: pointer;
   transition: 0.2s ease;
   font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 
   &:hover,
   &:focus {
-    background-color: #2962ff1a;
+    background-color: #aeaeae;
     transition: 0.2s ease;
   }
 
@@ -93,6 +96,12 @@ export const ButtonStyled = styled.button`
       background-color: ${variantOptions[variant].backgroundColor};
       border: ${variantOptions[variant].border};
       color: ${disabled ? '#9E9E9E' : variantOptions[variant].color};
+
+      &:hover,
+      &:focus {
+        background-color: #2962ff1a;
+        transition: 0.2s ease;
+      }
     `}
 
   ${({ size }) =>
@@ -102,7 +111,7 @@ export const ButtonStyled = styled.button`
       padding: ${sizeOptions[size].padding};
     `}
 
-  ${({ color }) =>
+  ${({ color, disableShadow }) =>
     color &&
     colorOptions[color] &&
     css`
@@ -112,7 +121,9 @@ export const ButtonStyled = styled.button`
 
       &:hover,
       &:focus {
-        background-color: ${colorOptions[color].backgroundColor.secondary};
+        background-color: ${disableShadow
+          ? colorOptions[color].backgroundColor.main
+          : colorOptions[color].backgroundColor.secondary};
         transition: 0.2s ease;
       }
     `}
