@@ -4,7 +4,9 @@ import { Button } from './Button'
 const App = () => {
   return (
     <div>
-      <Button disabled>Default</Button>
+      <Button color="danger" size="lg" variant="outline">
+        Default
+      </Button>
     </div>
   )
 }

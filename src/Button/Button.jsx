@@ -12,7 +12,12 @@ export const Button = ({
   children,
 }) => {
   return (
-    <ButtonStyled color={color} variant={variant} disabled={disabled}>
+    <ButtonStyled
+      size={size}
+      color={color}
+      variant={variant}
+      disabled={disabled}
+    >
       {children}
     </ButtonStyled>
   )
